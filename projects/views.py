@@ -13,3 +13,7 @@ def project(request,pk):
     projectObj = Project.objects.get(id=pk)
     tags = projectObj.tags.all()
     return render(request,'projects/single-project.html',{'project':projectObj,'tags':tags})
+
+def createProject(request):
+    context= {}
+    return render(request,'projects/project-form.html',{'context':context})
