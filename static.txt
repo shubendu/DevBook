@@ -30,4 +30,15 @@ Now how to let users upload images from html forms
 3dr=> modify view and add request.FILES
 
 Now this method is not good for production, we need to seperate our static files from django project
-=> install whitenoise first 
+=> 
+setup STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') this will define wehre our static files in production
+
+then run python manage.py collectstatic and change DEBUG = FALSE
+
+then updated urls.py => add staticurl to server our static files in production 
+
+urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+then install whitenoise and add this this to middleware 'whitenoise.middleware.WhiteNoiseMiddleware',
+
+but whitenoise does not serve user uploaded content we need to configure on s3 etc
