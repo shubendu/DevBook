@@ -25,3 +25,9 @@ urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 Now how to let users upload images from html forms
 1st=> go to forms.py and add the field
 
+2nd=> modify html file and write enctype="multipart/form-data"
+
+3dr=> modify view and add request.FILES
+
+Now this method is not good for production, we need to seperate our static files from django project
+=> install whitenoise first 
