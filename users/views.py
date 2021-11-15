@@ -9,5 +9,9 @@ def profiles(request):
 
 def userProfile(request,pk):
     profile = Profile.objects.get(id=pk)
+
+    # topSkills = profile.skill_set.exclude(description)
+
+
     context = {'profile': profile}
     return render(request, 'users/user-profile.html',context)
