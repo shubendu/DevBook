@@ -42,3 +42,6 @@ urlpatterns+= static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 then install whitenoise and add this this to middleware 'whitenoise.middleware.WhiteNoiseMiddleware',
 
 but whitenoise does not serve user uploaded content we need to configure on s3 etc
+
+
+working...............
